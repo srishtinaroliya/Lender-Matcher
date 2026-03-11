@@ -1,8 +1,8 @@
  
 <div align="center">
-  <a href="https://srishtinaroliya.github.io/Lender-Matcher/Demo.html" target="_blank">
-    <img src="https://img.youtube.com/vi/placeholder/0.jpg" alt="Watch Demo" width="800">
-  </a>
+ 
+https://github.com/srishtinaroliya/Lender-Matcher/demo.mp4
+ 
 </div>
 # Running the Lender Matching Platform Locally
 
