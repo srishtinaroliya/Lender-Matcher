@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Outfit:wght@100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: 'DM Sans', sans-serif;
+  --font-display: 'Outfit', sans-serif;
+
+  /* Fintech color palette - Trustworthy, clean, deep */
+  --background: 210 33% 98%;
+  --foreground: 222 47% 11%;
+  
+  --primary: 224 76% 48%; /* Deep Royal Blue */
+  --primary-foreground: 210 40% 98%;
+  
+  --secondary: 214 32% 91%;
+  --secondary-foreground: 222 47% 11%;
+  
+  --muted: 210 40% 96%;
+  --muted-foreground: 215 16% 47%;
+  
+  --accent: 214 100% 50%; /* Vibrant Blue Accent */
+  --accent-foreground: 210 40% 98%;
+  
+  --destructive: 348 83% 58%; /* Clean red */
+  --destructive-foreground: 210 40% 98%;
+
+  --success: 160 84% 39%; /* Emerald */
+  --success-foreground: 0 0% 100%;
+  
+  --border: 214 32% 91%;
+  --card: 0 0% 100%;
+  
+  --ring: 224 76% 48%;
+}
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-900 antialiased;
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    @apply font-semibold tracking-tight text-slate-900;
+  }
+}
+
+@layer utilities {
+  .animate-in {
+    animation: fade-in-up 0.4s ease-out forwards;
+  }
+  
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-xl border border-white/20 shadow-sm;
+  }
+
+  .fintech-card {
+    @apply bg-white rounded-2xl border border-slate-200/60 shadow-[0_2px_10px_-3px_rgba(6,81,237,0.05)] hover:shadow-[0_8px_30px_-4px_rgba(6,81,237,0.1)] transition-all duration-300;
+  }
+
+  .fintech-button {
+    @apply px-5 py-2.5 rounded-xl font-semibold inline-flex items-center justify-center transition-all duration-200 active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none;
+  }
+
+  .fintech-button-primary {
+    @apply fintech-button bg-blue-600 text-white shadow-lg shadow-blue-600/20 hover:bg-blue-700 hover:shadow-blue-600/30;
+  }
+  
+  .fintech-button-outline {
+    @apply fintech-button bg-white text-slate-700 border-2 border-slate-200 hover:border-slate-300 hover:bg-slate-50;
+  }
+
+  .fintech-input {
+    @apply w-full px-4 py-3 rounded-xl bg-white border border-slate-200 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 transition-all duration-200;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
